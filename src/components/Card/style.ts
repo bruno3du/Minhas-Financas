@@ -7,29 +7,29 @@ export const Card = styled.div`
 	border: 2px solid #8c5baa;
 	background-color: #692692;
 	border-radius: 10px;
-	padding: 14px 30px 14px;
+	padding: 12px 25px 12px;
 	width: 100%;
 	text-align: end;
+
 	/* padding card */
-	@media (max-width: 1100px) {
-		padding: 12px 25px 12px;
-	}
+
+	/* Text */
 
 	h4 {
 		color: #7690e2;
-		font-size: 1.4rem;
+		font-size: 1.3rem;
 	}
 	p {
-		font-size: 2.1rem;
+		font-size: 1.5rem;
 		color: #c2caf9;
 	}
 
 	@media (max-width: 1100px) {
 		h4 {
-			font-size: 1.3rem;
+			font-size: 1.2rem;
 		}
 		p {
-			font-size: 1.9rem;
+			font-size: 1.4rem;
 		}
 	}
 
@@ -47,7 +47,7 @@ export const Card = styled.div`
 			font-size: 0.8rem;
 		}
 		p {
-			font-size: 1.3rem;
+			font-size: 1.4rem;
 		}
 	}
 `;

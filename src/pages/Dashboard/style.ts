@@ -20,9 +20,15 @@ export const Dashboard = styled.div`
 		grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
 		gap: 20px;
 		place-items: center;
+
 		@media (max-width: 900px) {
 			width: 95vw;
 			gap: 10px;
+		}
+
+		@media (max-width: 760px) {
+			width: 100vw;
+			gap: 5px;
 		}
 	}
 `;
@@ -37,16 +43,30 @@ export const Container = styled.div`
 	height: 100vh;
 `;
 
+
 export const ContainerButtonsHeader = styled.div`
 	width: 100%;
 	display: flex;
 	justify-content: flex-end;
+
 	div {
 		position: relative;
 		display: flex;
 		gap: 20px;
 		padding-right: 50px;
+
+		@media (max-width: 1100px) {
+			padding-right: 40px;
+		}
+		@media (max-width: 960px) {
+			padding-right: 40px;
+		}
+		@media (max-width: 760px) {
+			padding-right: 40px;
+			display: none;
+		}
 	}
+
 	button {
 		position: relative;
 		bottom: 30px;
@@ -61,6 +81,19 @@ export const ContainerButtonsHeader = styled.div`
 
 		&:hover {
 			filter: brightness(0.9);
+		}
+
+		@media (max-width: 1100px) {
+			padding: 10px 26px;
+		}
+
+		@media (max-width: 960px) {
+			padding: 8px 20px;
+			font-size: 0.9rem;
+		}
+
+		@media (max-width: 760px) {
+			padding: 7px 16px;
 		}
 
 		> div {

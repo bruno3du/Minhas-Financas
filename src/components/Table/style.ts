@@ -13,6 +13,7 @@ export const Table = styled.table`
 	thead {
 		tr {
 			th {
+				text-align: left;
 				color: #7690e2;
 				font-weight: 700;
 			}
@@ -21,8 +22,22 @@ export const Table = styled.table`
 
 	thead,
 	tbody {
+		th,
+		td {
+			padding: 10px 23px;
+			font-size: 12px;
+		}
+	}
+
+	tbody {
+		td {
+			color: #c2caf9;
+		}
 		tr {
-			padding: 12px 23px;
+			border-radius: 10px;
+			background: linear-gradient(180deg, #741eab 0%, #601094 100%);
+			border-top: 1px solid #7690e2;
+			box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
 		}
 	}
 `;

@@ -26,35 +26,32 @@ export const Header = styled.header<HeaderHomeProps>`
 
 	/* Fonte */
 	h1 {
-		font-size: 3rem;
+		font-size: 2.5rem;
 		font-weight: 400;
 	}
 	span {
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 		cursor: pointer;
 	}
 
 	@media (max-width: 1100px) {
 		h1 {
-			font-size: 2.5rem;
-		}
-		span {
-			font-size: 1.4rem;
+			font-size: 2.1rem;
 		}
 	}
 
 	@media (max-width: 800px) {
 		h1 {
-			font-size: 2.4rem;
+			font-size: 2rem;
 		}
 		span {
-			font-size: 1.3rem;
+			font-size: 1rem;
 		}
 	}
 
 	@media (max-width: 630px) {
 		h1 {
-			font-size: 2rem;
+			font-size: 1.8rem;
 		}
 		span {
 			font-size: 1rem;
