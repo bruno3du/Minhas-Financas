@@ -27,6 +27,20 @@ export default createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        scrollbar-width: thin; /* "auto" or "thin" */
+	    scrollbar-color: #7690E2 #4E1272; /* scroll thumb and track */
+        
+	    &::-webkit-scrollbar {
+		width: 12px; /* width of the entire scrollbar */
+	}
+	    &::-webkit-scrollbar-track {
+		background: #4E1272;
+	}
+	    &::-webkit-scrollbar-thumb {
+		background-color: #7690E2; /* color of the scroll thumb */
+		border-radius: 20px; /* roundness of the scroll thumb */
+		border: 3px solid #4E1272; /* creates padding around scroll thumb */
+	}
     }
     
     body {

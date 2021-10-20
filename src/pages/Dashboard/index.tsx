@@ -2,7 +2,7 @@
 
 import Header from '../../components/Header';
 import Card from '../../components/Card';
-// import Table from '../../components/Table'
+import Table from '../../components/Table'
 import {
 	Dashboard,
 	Container,
@@ -11,12 +11,10 @@ import {
 } from './style';
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai';
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import ColumnGroupingTable from '../../components/Table/teste';
+
+
 
 export default function Index() {
-	const params = useParams();
-	console.log(params);
 	const [isBtnEntrada, setBtnEntrada] = useState(false);
 	const [isBtnSaida, setBtnSaida] = useState(false);
 
@@ -66,7 +64,7 @@ export default function Index() {
 				<ReportSession>
 					<h2>Relatório</h2>
 					<div>
-					<ColumnGroupingTable></ColumnGroupingTable>
+					<Table></Table>
 					</div>
 				</ReportSession>
 			</Container>

@@ -40,7 +40,7 @@ export const Container = styled.div`
 	border-radius: 25px;
 	margin: auto;
 	margin-top: 115px;
-	height: 100vh;
+	height: 720px;
 `;
 
 export const ContainerButtonsHeader = styled.div`
@@ -123,7 +123,11 @@ export const ReportSession = styled.div`
 	> div {
 		margin-top: 30px;
 		height: 70vh;
-		border: 3px solid #7690e2;
+		
 		border-radius: 25px;
 	}
+
+	@media (max-width: 700px) {
+		width: 95%;
+		}
 `;
