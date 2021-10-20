@@ -34,8 +34,6 @@ export default createGlobalStyle`
         -webkit-font-smoothing: antialiased !important;
       }
 
-      
-
 `;
 
 // *{

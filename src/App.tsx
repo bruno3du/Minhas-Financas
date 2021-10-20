@@ -12,6 +12,10 @@ export default function app() {
 				<Switch>
 					<Route path='/' exact component={Home} />
 					<Route path='/dashboard' component={Dashboard} />
+					<Route path='/dashboard/teste/teste'>
+						<div>erro</div>
+					</Route>
+					{/* <Route path='/dashboard/:id' component={Dashboard} /> */}
 				</Switch>
 			</Router>
 		</div>

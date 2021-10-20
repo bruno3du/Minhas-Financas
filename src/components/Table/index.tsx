@@ -9,10 +9,11 @@ export default function Index() {
 				<thead>
 					<tr>
 						<th>Descrição</th>
-						<th>Tipo</th>{/* Não obrigatório*/}
+						<th>Tipo</th>
+						{/* Não obrigatório*/}
 						<th>Valor</th>
 						<th>Saldo</th>
-						<th>Data</th>  {/* Não obrigatório*/}
+						<th>Data</th> {/* Não obrigatório*/}
 						<th>Actions</th>
 					</tr>
 				</thead>

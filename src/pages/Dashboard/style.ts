@@ -43,12 +43,14 @@ export const Container = styled.div`
 	height: 100vh;
 `;
 
-
 export const ContainerButtonsHeader = styled.div`
 	width: 100%;
 	display: flex;
 	justify-content: flex-end;
 
+	@media (max-width: 760px) {
+		justify-content: center;
+	}
 	div {
 		position: relative;
 		display: flex;
@@ -62,8 +64,9 @@ export const ContainerButtonsHeader = styled.div`
 			padding-right: 40px;
 		}
 		@media (max-width: 760px) {
-			padding-right: 40px;
-			display: none;
+			padding-right: 30px;
+			gap: 10px;
+			/* Mudar Icon */
 		}
 	}
 
