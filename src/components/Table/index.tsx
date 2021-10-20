@@ -36,26 +36,27 @@ function Row() {
 					</CustomizedTableCellBody>
 				)}
 				<CustomizedTableCellBody component='th' scope='row'>
-					Um
+					Descrição D
 				</CustomizedTableCellBody>
 				{matches && (
-					<CustomizedTableCellBody align='right'>dois</CustomizedTableCellBody>
+					<CustomizedTableCellBody align='right'>Tipo D</CustomizedTableCellBody>
 				)}
-				<CustomizedTableCellBody align='right'>três</CustomizedTableCellBody>
+				<CustomizedTableCellBody align='right'>Valor D</CustomizedTableCellBody>
 				{matches && (
 					<>
 						<CustomizedTableCellBody align='right'>
-							quatro
+							Saldo D
 						</CustomizedTableCellBody>
 						<CustomizedTableCellBody align='right'>
-							cinco
+							Data D
 						</CustomizedTableCellBody>
 						<CustomizedTableCellBody align='right'>
-							seis
+							Actions D
 						</CustomizedTableCellBody>
 					</>
 				)}
 			</CustomizedTableRow>
+			{/* COLLAPSE */}
 			{!matches && (
 				<CustomizedTableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
 					<CustomizedTableCellBody
@@ -83,14 +84,14 @@ function Row() {
 									<TableBody>
 										<CustomizedTableRow>
 											<CustomizedTableCellBody component='th' scope='row'>
-												Um
+											Tipo C
 											</CustomizedTableCellBody>
-											<CustomizedTableCellBody>teste</CustomizedTableCellBody>
+											<CustomizedTableCellBody>Saldo C</CustomizedTableCellBody>
 											<CustomizedTableCellBody align='right'>
-												DOis
+											Data C
 											</CustomizedTableCellBody>
 											<CustomizedTableCellBody align='right'>
-												tres
+											Actions C
 											</CustomizedTableCellBody>
 										</CustomizedTableRow>
 									</TableBody>
@@ -109,7 +110,7 @@ export default function TableBox() {
 
 	function CreateTable() {
 		const table = [];
-		for (let i = 0; i < 10; i++) {
+		for (let i = 0; i < 20; i++) {
 			table.push(Row());
 		}
 		return table;
