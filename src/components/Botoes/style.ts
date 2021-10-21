@@ -2,11 +2,15 @@
 
 import styled from 'styled-components';
 
-export const Buttons = styled.button`
+interface BackgroundColorProps {
+	isOpen: boolean;
+}
+
+export const Buttons = styled.button<BackgroundColorProps>`
 	position: relative;
 	bottom: 30px;
 	font-family: 'NexaHeavy', sans-serif;
-	background-color: #581c7d;
+	background-color: ${props => props.isOpen ? "#741EAB" : "#581C7D"};
 	border: 2px solid #7690e2;
 	border-radius: 10px;
 	color: #7690e2;

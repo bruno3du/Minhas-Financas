@@ -16,6 +16,13 @@ export const Header = styled.header<HeaderHomeProps>`
 	overflow: hidden;
 	flex-flow: wrap;
 	/* Set Padding */
+
+	button {
+		font-family: 'NexaBook', sans-serif;
+		color: ${(props) => (props.isHeaderHome ? '#6a1b9a' : '#C2CAF9')};
+		background-color: transparent;
+		border: none;
+	}
 	@media (max-width: 1100px) {
 		padding: 20px 60px;
 	}
@@ -29,7 +36,7 @@ export const Header = styled.header<HeaderHomeProps>`
 		font-size: 2.5rem;
 		font-weight: 400;
 	}
-	span {
+	button {
 		font-size: 1.2rem;
 		cursor: pointer;
 	}
@@ -44,7 +51,7 @@ export const Header = styled.header<HeaderHomeProps>`
 		h1 {
 			font-size: 2rem;
 		}
-		span {
+		button {
 			font-size: 1rem;
 		}
 	}
@@ -53,7 +60,7 @@ export const Header = styled.header<HeaderHomeProps>`
 		h1 {
 			font-size: 1.8rem;
 		}
-		span {
+		button {
 			font-size: 1rem;
 		}
 	}

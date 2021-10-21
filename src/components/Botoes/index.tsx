@@ -8,15 +8,21 @@ interface ButtonProps {
 	children: ReactNode;
 	isOpen: boolean;
 	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  setCloseOther: React.Dispatch<React.SetStateAction<boolean>>;
+	setCloseOther: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function Index({ children, isOpen, setIsOpen, setCloseOther }: ButtonProps) {
+export default function Index({
+	children,
+	isOpen,
+	setIsOpen,
+	setCloseOther,
+}: ButtonProps) {
 	return (
 		<Buttons
+			isOpen={isOpen}
 			onClick={() => {
 				setIsOpen(!isOpen);
-        setCloseOther(false)
+				setCloseOther(false);
 			}}>
 			<div>
 				{isOpen ? <AiOutlineMinusCircle /> : <AiOutlinePlusCircle />}

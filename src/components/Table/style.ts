@@ -16,7 +16,6 @@ export const CustomizedTableCellHeader = styled(TableCell)`
 	border-bottom: 2px solid #7690e2;
 	font-size: 1rem;
 	font-weight: 600;
-	
 `;
 
 export const CustomizedTableCellBody = styled(TableCell)`

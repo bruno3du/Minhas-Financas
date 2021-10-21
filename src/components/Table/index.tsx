@@ -115,6 +115,7 @@ export default function TableBox() {
 		}
 		return table;
 	}
+	
 	return (
 		<TableContainer sx={{ maxHeight: 460 }} component={Paper}>
 			<Table sx={{ minWidth: 200 }} stickyHeader aria-label='sticky table'>

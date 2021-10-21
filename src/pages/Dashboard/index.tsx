@@ -4,6 +4,7 @@ import Header from '../../components/Header';
 import Card from '../../components/Card';
 import Table from '../../components/Table';
 import Botoes from '../../components/Botoes';
+import FormEntrada from '../../components/FormEntrada';
 import {
 	Dashboard,
 	Container,
@@ -20,9 +21,9 @@ export default function Index() {
 		<Dashboard>
 			<Header isHeaderHome={false} />
 			<div className='cards'>
-				<Card></Card>
-				<Card></Card>
-				<Card></Card>
+				<Card title='Saldo'></Card>
+				<Card title='Gastos'></Card>
+				<Card title='Entradas'></Card>
 			</div>
 			<Container>
 				<ContainerButtonsHeader>
@@ -41,6 +42,10 @@ export default function Index() {
 						</Botoes>
 					</div>
 				</ContainerButtonsHeader>
+				{btnIncoming && <FormEntrada title='Entrada' />}
+				{btnAccount && <FormEntrada title='Saída' />}
+				{/* <FormEntrada title="Saída"/> */}
+
 				<ReportSession>
 					<h2>Relatório</h2>
 					<div>
