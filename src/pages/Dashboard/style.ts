@@ -80,7 +80,7 @@ export const ReportSession = styled.div`
 	width: 80%;
 	h2 {
 		color: white;
-		font-family: 'NexaHeavy';
+		font-family: 'NexaHeavy', sans-serif;
 		font-size: 2.2rem;
 		font-weight: 500;
 		color: #7690e2;
@@ -88,7 +88,6 @@ export const ReportSession = styled.div`
 
 	> div {
 		margin-top: 30px;
-		height: 70vh;
 		border-radius: 25px;
 	}
 
