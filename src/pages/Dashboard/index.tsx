@@ -42,9 +42,11 @@ export default function Index() {
 						</Botoes>
 					</div>
 				</ContainerButtonsHeader>
-				{btnIncoming && <FormEntrada title='Entrada' />}
-				{btnAccount && <FormEntrada title='Saída' />}
-				{/* <FormEntrada title="Saída"/> */}
+				{btnIncoming && <FormEntrada title='Saída' />}
+				{btnAccount && <FormEntrada title='Entrada' />}
+
+				{/* TODO CORRIGIR NOMES */}
+				
 
 				<ReportSession>
 					<h2>Relatório</h2>

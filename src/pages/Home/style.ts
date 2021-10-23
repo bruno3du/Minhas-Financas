@@ -22,7 +22,7 @@ const moving = keyframes`
   }
 `;
 
-export const BackgroundHome = styled.body`
+export const BackgroundHome = styled.div`
 	height: 100vh;
 	color: var(--color);
 	background: transparent

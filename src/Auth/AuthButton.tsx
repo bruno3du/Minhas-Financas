@@ -1,30 +1,34 @@
 /** @format */
 
-import AuthContext from './AuthContext';
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
 
 export default function AuthButton() {
 	const history = useHistory();
-	const { isLogged, setIsLogged } = useContext(AuthContext);
+	const { user, signInWithGoogle } = useAuth();
+	console.log(user, signInWithGoogle)
 
 	useEffect(() => {
-		if (!isLogged) {
+		if (!true) {
 			history.push('/');
 		}
-	}, [isLogged]);
+	}, [user, history]);
 
-	function handleRedirect() {
+
+	async function handleRedirect() {
+		if (!user) {
+			await signInWithGoogle();
+		}
 		history.push('/dashboard');
 	}
 
 	return (
 		<button
 			onClick={() => {
-				setIsLogged(!isLogged);
 				handleRedirect();
 			}}>
-			{isLogged ? 'Logout' : 'Login'}
+			{user ? (<span>{user.name}</span>) : 'Login'}
 		</button>
 	);
 }

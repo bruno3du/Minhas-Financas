@@ -40,7 +40,7 @@ export const Container = styled.div`
 	border-radius: 25px;
 	margin: auto;
 	margin-top: 115px;
-padding-bottom: 30px;
+	padding-bottom: 30px;
 `;
 
 export const ContainerButtonsHeader = styled.div`
