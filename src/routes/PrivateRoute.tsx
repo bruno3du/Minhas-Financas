@@ -11,6 +11,7 @@ const PrivateRoute = (props: PrivateRouteProps) => {
 	const { component: Component, ...rest } = props;
 	const { user } = useAuth();
 
+
 	return (
 		<Route
 			{...rest}

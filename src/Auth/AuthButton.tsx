@@ -7,17 +7,16 @@ import { useAuth } from '../hooks/useAuth';
 export default function AuthButton() {
 	const history = useHistory();
 	const { user, signInWithGoogle } = useAuth();
-	console.log(user, signInWithGoogle)
 
 	useEffect(() => {
-		if (!true) {
+		// console.log(user, signInWithGoogle);
+		if (!user?.name) {
 			history.push('/');
 		}
 	}, [user, history]);
 
-
 	async function handleRedirect() {
-		if (!user) {
+		if (!user?.name) {
 			await signInWithGoogle();
 		}
 		history.push('/dashboard');
@@ -28,7 +27,7 @@ export default function AuthButton() {
 			onClick={() => {
 				handleRedirect();
 			}}>
-			{user ? (<span>{user.name}</span>) : 'Login'}
+			{!user ? 'Login' : <span>{user.name}</span>}
 		</button>
 	);
 }

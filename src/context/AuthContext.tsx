@@ -6,12 +6,13 @@ import {
 	signInWithPopup,
 	signOut,
 } from '@firebase/auth';
-import { createContext, ReactNode, useState, useEffect } from 'react';
+import { createContext, ReactNode, useEffect, useState } from 'react';
+import useLocalStorage from '../hooks/useLocalStorage';
 import { auth } from '../services/firebase';
 
 type User = {
-	id: string;
-	name: string;
+	id: string | boolean;
+	name: string | boolean;
 };
 
 type AuthContextType = {
@@ -26,6 +27,9 @@ type AuthContextProviderProps = {
 export const AuthContext = createContext({} as AuthContextType);
 
 export default function AuthProvider(props: AuthContextProviderProps) {
+	const [user, setUser] = useLocalStorage('auth', {} as User);
+	const [ isLogged, setIsLogged ] = useState(false)
+
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (user) => {
 			if (user) {
@@ -38,12 +42,13 @@ export default function AuthProvider(props: AuthContextProviderProps) {
 					id: uid,
 					name: displayName,
 				});
+			} else if (user === {}) {
+				return user
 			}
 		});
 
 		return () => unsubscribe();
-	}, []);
-	const [user, setUser] = useState<User>();
+	}, [setUser]);
 
 	async function signInWithGoogle() {
 		const provider = new GoogleAuthProvider();

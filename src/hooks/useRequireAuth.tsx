@@ -9,9 +9,9 @@ export default function useRequireAuth(redirectUrl = '/') {
 	const router = useRouter();
 
 	useEffect(() => {
-		if (user === false) {
+		if (!user) {
 			router.push(redirectUrl);
 		}
-	}, [user, router]);
+	}, [user, router, redirectUrl]);
 	return user;
 }
