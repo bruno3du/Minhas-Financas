@@ -11,11 +11,23 @@ import {
 	ContainerButtonsHeader,
 	ReportSession,
 } from './style';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
+import { useAuth } from '../../hooks/useAuth';
 
 export default function Index() {
 	const [btnIncoming, setBtnIncoming] = useState(false);
 	const [btnAccount, setBtnAccount] = useState(false);
+	const { isLogged } = useAuth();
+
+	const history = useHistory();
+
+	useEffect(() => {
+		console.log(isLogged);
+		if (!isLogged) {
+			history.push('/');
+		}
+	}, [isLogged, history]);
 
 	return (
 		<Dashboard>
@@ -46,7 +58,6 @@ export default function Index() {
 				{btnAccount && <FormEntrada title='Entrada' />}
 
 				{/* TODO CORRIGIR NOMES */}
-				
 
 				<ReportSession>
 					<h2>Relatório</h2>

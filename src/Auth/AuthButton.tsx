@@ -1,22 +1,16 @@
 /** @format */
 
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 
 export default function AuthButton() {
 	const history = useHistory();
-	const { user, signInWithGoogle } = useAuth();
+	const { isLogged, user, signInWithGoogle } = useAuth();
 
-	useEffect(() => {
-		// console.log(user, signInWithGoogle);
-		if (!user?.name) {
-			history.push('/');
-		}
-	}, [user, history]);
-
+	
 	async function handleRedirect() {
-		if (!user?.name) {
+		if (!isLogged) {
 			await signInWithGoogle();
 		}
 		history.push('/dashboard');
@@ -27,7 +21,7 @@ export default function AuthButton() {
 			onClick={() => {
 				handleRedirect();
 			}}>
-			{!user ? 'Login' : <span>{user.name}</span>}
+			{user ?<span>{user.name}</span> : 'Login'}
 		</button>
 	);
 }

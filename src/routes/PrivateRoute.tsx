@@ -9,14 +9,14 @@ interface PrivateRouteProps extends RouteProps {
 }
 const PrivateRoute = (props: PrivateRouteProps) => {
 	const { component: Component, ...rest } = props;
-	const { user } = useAuth();
+	const { isLogged } = useAuth();
 
 
 	return (
 		<Route
 			{...rest}
 			render={(routeProps) =>
-				user ? (
+				isLogged ? (
 					<Component {...routeProps} />
 				) : (
 					<Redirect

@@ -6,19 +6,20 @@ import {
 	signInWithPopup,
 	signOut,
 } from '@firebase/auth';
-import { createContext, ReactNode, useEffect, useState } from 'react';
+import { createContext, ReactNode, useEffect } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
 import { auth } from '../services/firebase';
 
 type User = {
-	id: string | boolean;
-	name: string | boolean;
+	id: string;
+	name: string;
 };
 
 type AuthContextType = {
 	user: User | undefined;
 	signInWithGoogle: () => Promise<void>;
 	signout: () => Promise<void>;
+	isLogged: boolean;
 };
 
 type AuthContextProviderProps = {
@@ -28,7 +29,7 @@ export const AuthContext = createContext({} as AuthContextType);
 
 export default function AuthProvider(props: AuthContextProviderProps) {
 	const [user, setUser] = useLocalStorage('auth', {} as User);
-	const [ isLogged, setIsLogged ] = useState(false)
+	const [isLogged, setIsLogged] = useLocalStorage('logged', false);
 
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -42,13 +43,11 @@ export default function AuthProvider(props: AuthContextProviderProps) {
 					id: uid,
 					name: displayName,
 				});
-			} else if (user === {}) {
-				return user
 			}
 		});
 
 		return () => unsubscribe();
-	}, [setUser]);
+	}, [setUser, setIsLogged]);
 
 	async function signInWithGoogle() {
 		const provider = new GoogleAuthProvider();
@@ -56,7 +55,6 @@ export default function AuthProvider(props: AuthContextProviderProps) {
 		provider.addScope('email');
 		const result = await signInWithPopup(auth, provider);
 
-		localStorage.setItem('userDatas', JSON.stringify(result));
 		if (result) {
 			const { displayName, uid } = result.user;
 
@@ -65,6 +63,7 @@ export default function AuthProvider(props: AuthContextProviderProps) {
 			}
 
 			setUser({ id: uid, name: displayName });
+			setIsLogged(true);
 		}
 	}
 
@@ -73,7 +72,7 @@ export default function AuthProvider(props: AuthContextProviderProps) {
 	};
 
 	return (
-		<AuthContext.Provider value={{ user, signInWithGoogle, signout }}>
+		<AuthContext.Provider value={{ user, signInWithGoogle, signout, isLogged }}>
 			{props.children}
 		</AuthContext.Provider>
 	);
